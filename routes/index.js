@@ -6,9 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'express' });
 });
 
-router.get('/doit', function(req, res, next) {
-    res.render('doit', { title: 'Doit' });
+router.post('/', function(req, res){
+    //res.writeHead(200, {'Content-Type': 'text/html'});
+    res.send("Hi there! " + req.param('username'));
 });
-
 
 module.exports = router;
